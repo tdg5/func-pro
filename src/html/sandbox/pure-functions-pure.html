@@ -1,0 +1,19 @@
+{% extends "layouts/sandbox/single.html" %}
+
+{%- block dataMode -%}javascript{%- endblock -%}
+
+{%- block content -%}
+// A pure implementation
+function decrementPure(number) {
+  return number - 1;
+}
+
+function countDownPure(count, acc) {
+  if (count < 0) return acc;
+  acc = acc || "";
+  return countDownPure(decrementPure(count), acc + " " + count);
+}
+
+// Note that calling sandbox.log is impure!
+sandbox.log(countDownPure(3));
+{%- endblock -%}

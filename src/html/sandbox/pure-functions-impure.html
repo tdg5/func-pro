@@ -1,0 +1,22 @@
+{% extends "layouts/sandbox/single.html" %}
+
+{%- block dataMode -%}javascript{%- endblock -%}
+
+{%- block content -%}
+// An impure implementation
+let counter = 3;
+
+const decrementImpure = () => counter -= 1;
+
+function countDownImpure() {
+  let acc = "";
+  for (let i = 0; i < 4; ++i) {
+    acc = acc + " " + counter;
+    decrementImpure();
+  }
+  return acc;
+}
+
+// Note that calling sandbox.log is impure!
+sandbox.log(countDownImpure(3));
+{%- endblock -%}

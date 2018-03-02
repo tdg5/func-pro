@@ -1,0 +1,25 @@
+{% extends "layouts/sandbox/single.html" %}
+
+{%- block dataMode -%}javascript{%- endblock -%}
+
+{%- block content -%}
+// Named functions:
+function prependArticle(noun) { return "the " + noun; }
+
+// Anonymous functions:
+const prettifyList = function(list) { return list.join(", "); };
+
+// Function constructor:
+const appendSpaceyOf = Function("preamble", "return preamble + ' of '");
+
+// ES6 adds support for arrow functions:
+const sixTimesNine = () => 42;
+
+sandbox.log(appendSpaceyOf(
+              prependArticle("answer to ") + prependArticle("ultimate question")) +
+            prettifyList(["Life",
+                          prependArticle("Universe"),
+                          "and Everything"]) +
+            " is " +
+            sixTimesNine());
+{%- endblock -%}

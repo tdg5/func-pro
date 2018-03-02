@@ -3,4 +3,17 @@
 {%- block dataMode -%}javascript{%- endblock -%}
 
 {%- block content -%}
+// Functions can take functions as arguments:
+sandbox.log(
+  [1, 2, 3, 4].map(x => 2**x)
+);
+
+// Functions can return functions as results:
+function multiplier(factor) {
+  return function(base) {
+    return base * factor;
+  }
+}
+const doubler = multiplier(2);
+sandbox.log(doubler(10));
 {%- endblock -%}

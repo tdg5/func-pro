@@ -1,0 +1,20 @@
+{% extends "layouts/sandbox/single.html" %}
+
+{%- block dataMode -%}javascript{%- endblock -%}
+
+{%- block content -%}
+function decrementPure(number) { return number - 1; }
+
+function countDownPure(count, acc) {
+  if (count < 0) return acc;
+  acc = acc || "";
+  return countDownPure(decrementPure(count), acc + " " + count);
+}
+
+// Three better be doable
+sandbox.log(countDownPure(3));
+
+// womp womp
+try { sandbox.log(countDownPure(20000)); }
+catch(e) { sandbox.log(e); }
+{%- endblock -%}

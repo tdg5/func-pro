@@ -1,0 +1,173 @@
+<section>
+  <h1>Pure Functions</h1>
+  <img
+    alt="If only we'd defined pure functions"
+    class="unstyled width-lg"
+    src="/images/side-effects.jpg"
+    title="Not a real movie. Yet..."
+  >
+</section>
+<section>
+  <h3>Pure Functions</h3>
+  <div class="columns-2">
+    <div class="column">
+      <p>
+        Pure functions have no side effects. That is, pure functions do not
+        modify state or have an observable interaction with the outside world
+        besides returning a value.
+      </p>
+    </div>
+    <div class="column">
+      <a
+        href="https://xkcd.com/1312/"
+        target="_blank"
+        title="XKCD #1312"
+      >
+        <img
+          class="unstyled"
+          alt="Haskell"
+          src="/images/xkcd-haskell.png"
+          title="The problem with Haskell is that it's a language built on lazy evaluation and nobody's actually called for it."
+        >
+      </a>
+    </div>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <a
+          href="https://en.wikipedia.org/wiki/Pure_function"
+          target="_blank"
+          title="Wikipedia.org - Pure function"
+        >
+          Wikipedia.org - Pure&nbsp;function
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)"
+          target="_blank"
+          title="Wikipedia.org - Side Effect (computer science)"
+        >
+          Wikipedia.org - Side effect
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h3>Pure Goodness</h3>
+  <p>Pure functions have many beneficial properties:</p>
+  <ul>
+    <li>
+      If the result of a pure function is not used, the function can be
+      removed without affecting other expressions.
+    </li>
+    <li>
+      If a pure function is always called with arguments that have no
+      side-effects, the result of the function for any given set of arguments is
+      always the same.
+      <ul>
+        <li>
+          This is sometimes called
+          <a
+            href="https://en.wikipedia.org/wiki/Referential_transparency"
+            target="_blank"
+            title="Wikipedia.org - Referential transparency"
+          >
+            referential transparency
+          </a>.
+        </li>
+        <li>
+          Makes reasoning about the code much simpler.
+        </li>
+        <li>
+          Makes memoization easy and effective.
+        </li>
+      </ul>
+    </li>
+    <li>
+      If there is no data dependency between two pure functions, their order can
+      be reversered or they can be run in parallel without interference.
+    </li>
+  </ul>
+</section>
+<section>
+  <div class="columns-2">
+    <div class="column">
+      <h2 class="margin-top-sm">Only you can prevent side effects!</h2>
+      <div class="margin-top-md">
+        Pure functions are:
+        <ul class="margin-top-sm">
+          <li>Easier to reason about</li>
+          <li>Easier to test</li>
+          <li>Easier to compose</li>
+          <li>Easier to parallelize</li>
+        </ul>
+      </div>
+    </div>
+    <div class="column">
+      <img
+        alt="Only you can prevent side effects"
+        class="unstyled"
+        src="/images/only-you.jpg"
+        title="Only you can prevent side effects"
+      >
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Pure Functions</h2>
+  <p>Functional purity is an implementation decision.</p>
+  <div class="columns-2 margin-top-md">
+    <div class="column">
+      <iframe class="sandbox-md" data-src="sandbox/pure-functions-impure.html"></iframe>
+    </div>
+    <div class="column">
+      <iframe class="sandbox-md" data-src="sandbox/pure-functions-pure.html"></iframe>
+    </div>
+  </div>
+</section>
+<section>
+  <img
+    alt="Reality check!"
+    class="unstyled width-lg"
+    src="/images/reality-check.png"
+    title="Reality check!"
+  >
+  <ul>
+    <li>
+      A lot of bugs are caused by the state being different from what the
+      developer expects at call time.
+    </li>
+    <li>
+      Even so, completely removing side-effects is impractical, if not
+      impossible.
+      <ul>
+        <li>
+          A program completely without side-effects sounds pretty useless.
+        </li>
+      </ul>
+    </li>
+    <li>
+      A more robust strategy is to isolate the code that mutates state and
+      apply pure transformations to the full application state.
+      <ul>
+        <li>
+          This makes it easier to reason about code that doesn't change state.
+        </li>
+        <li>
+          The JavaScript library
+          <a
+            href="https://github.com/reactjs/redux"
+            target="_blank"
+            title="GitHub.com | reactjs/redux"
+          >
+            Redux
+          </a> is a good example of this type of separation of application state
+          and application logic.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>

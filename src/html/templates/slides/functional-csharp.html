@@ -1,0 +1,53 @@
+<section>
+  <h1>Functional C#</h1>
+  <img
+    alt="Lambda with a mustache"
+    class="unstyled width-sm"
+    src="/images/mustache-lambda.png"
+    title="It's a lambda with a mustache, so what?"
+  >
+</section>
+<section>
+  <h3>C#, functional since 3.0</h3>
+  <ul>
+    <li>First-class functions</li>
+    <li>Lambda expressions</li>
+    <li>
+      Support for immutability via the readonly keyword
+      <ul>
+        <li>Allows developer to embrace immutability where helpful</li>
+      </ul>
+    </li>
+    <li>
+      Linq
+      <ul>
+        <li>Declarative queries instead of step-by-step imperative process</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Functional C#</h3>
+<pre><code class="cs font-size-lg" data-trim>
+{% filter safe %}{% filter escape %}
+// Lambda expression:
+string[] words = { "cherry", "apple", "blueberry" };
+int shortestWordLength = words.Min(w => w.Length);
+
+// readonly keyword:
+class Age {
+  readonly int _year;
+  Age(int year) { _year = year; }
+
+  // Compile error if uncommented.
+  // void ChangeYear() { _year = 1967; }
+}
+
+// Linq:
+IEnumerable<int> numbersQuery = from num in numbers1
+                                where num < 3 || num > 7
+                                select num;
+int numCount = numbersQuery.Count();
+{% endfilter %}{% endfilter %}
+  </code></pre>
+</section>

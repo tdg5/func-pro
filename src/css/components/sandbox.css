@@ -12,11 +12,11 @@
 }
 
 .sandbox-short-results .row:first-child {
-  height: 70%;
+  height: 80%;
 }
 
 .sandbox-short-results .row + .row {
-  height: 30%;
+  height: 20%;
 }
 
 .sandbox .row .cell {

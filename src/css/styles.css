@@ -145,6 +145,7 @@
   height: 15em;
   width: 100%;
 }
+
 .reveal .sandbox-xl {
   height: 17em;
   width: 100%;
@@ -210,4 +211,11 @@
 
 .reveal ul.unstyled {
   list-style-type: none;
+}
+
+.bg-lambda {
+  background: url(/images/lambda.png) center center no-repeat;
+  box-sizing: border-box;
+  height: 512px;
+  padding-top: 96px !important;
 }

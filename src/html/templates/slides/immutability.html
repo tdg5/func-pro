@@ -1,0 +1,46 @@
+<section>
+  <h1>Immutability</h1>
+  <img
+    alt="Can't touch this!"
+    class="unstyled"
+    src="/images/cant-touch-this.gif"
+    title="I'm wearing Hammer pants right now and you have no idea."
+  >
+</section>
+<section>
+  <h3>Immutabe Data Structures</h3>
+  <ul>
+    <li>
+      Immutable data types, when updated, do not update in-place, but instead
+      yield a new object with the updated data.
+    </li>
+    <li>
+      Can actually be very efficient
+      <ul>
+        <li>New objects can point to existing data cheaply</li>
+        <li>
+          Compilers can make optimiaztions that wouldn't be safe with mutable
+          data
+        </li>
+      </ul>
+    </li>
+    <li>
+      Often used with and similar in benefit to pure functions:
+      <ul>
+        <li>Easier to understand, predict and reason about.</li>
+        <li>Facilitates code reuse.</li>
+        <li>Facilitates testing.</li>
+        <li>Variations in timing and order of calls does not affect result.</li>
+      </ul>
+    <li>
+      <a
+        href="https://facebook.github.io/immutable-js/"
+        target="_blank"
+        title="Immutable.js"
+      >
+        Immutable.js
+      </a>
+      brings immutable collections to JavaScript.
+    </li>
+  </ul>
+</section>
